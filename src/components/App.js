@@ -30,7 +30,7 @@ class App extends React.Component {
       ...prevState,
       searchingMovements: true
     }), () => {
-      fetch('http://localhost:3000/globalStatus')
+      fetch('http://localhost:3001/globalStatus')
         .then(response => response.json())
         .then(({ netBalance }) => this.setGlobalPosition(netBalance))
         .catch(err => this.setGlobalPosition(0));
@@ -47,7 +47,7 @@ class App extends React.Component {
       errorState: false,
       searchingMovements: true
     }), () => {
-      fetch('http://localhost:3000/transactions')
+      fetch('http://localhost:3001/transactions')
         .then(response => response.json())
         .then(movements => this.setMovements(movements))
         .catch(err => this.setMovements());
